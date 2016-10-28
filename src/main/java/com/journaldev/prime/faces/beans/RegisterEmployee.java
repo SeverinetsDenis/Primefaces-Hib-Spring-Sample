@@ -1,6 +1,7 @@
 package com.journaldev.prime.faces.beans;
 
 import javax.faces.application.FacesMessage;
+import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
@@ -8,6 +9,8 @@ import javax.faces.context.FacesContext;
 
 import com.journaldev.hibernate.data.Employee;
 import com.journaldev.spring.service.EmployeeService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 @ManagedBean
 @SessionScoped
@@ -15,8 +18,8 @@ public class RegisterEmployee {
 
 	@ManagedProperty("#{employeeService}")
 	private EmployeeService employeeService;
-
-	private Employee employee = new Employee();
+	@ManagedProperty("#{employee}")
+	private Employee employee; // = new Employee();
 
 	public EmployeeService getEmployeeService() {
 		return employeeService;

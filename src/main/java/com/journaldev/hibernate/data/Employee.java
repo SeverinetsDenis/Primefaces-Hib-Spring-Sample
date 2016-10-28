@@ -1,7 +1,10 @@
 package com.journaldev.hibernate.data;
 
+import org.springframework.stereotype.Component;
+
 import java.util.Date;
 
+@Component
 public class Employee {
 	private long employeeId;
 	private String employeeName;
