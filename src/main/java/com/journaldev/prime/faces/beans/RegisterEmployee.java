@@ -12,14 +12,16 @@ import com.journaldev.spring.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.io.Serializable;
+
 @ManagedBean
 @SessionScoped
-public class RegisterEmployee {
+public class RegisterEmployee implements Serializable {
 
 	@ManagedProperty("#{employeeService}")
 	private EmployeeService employeeService;
 	@ManagedProperty("#{employee}")
-	private Employee employee; // = new Employee();
+	private Employee employee;
 
 	public EmployeeService getEmployeeService() {
 		return employeeService;
@@ -43,6 +45,6 @@ public class RegisterEmployee {
 		// Add message
 		FacesContext.getCurrentInstance().addMessage(null, 
 				new FacesMessage("The Employee "+this.employee.getEmployeeName()+" Is Registered Successfully"));
-		return "";
+		return "result.xhtml?faces-redirect=true&includeViewParams=true";
 	}
 }

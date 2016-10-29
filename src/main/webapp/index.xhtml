@@ -5,18 +5,19 @@
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
 	<script name="jquery/jquery.js" library="primefaces"></script>
+	<script type="text/javascript" src="js/calendar.js"></script>
 	<title>Register Employee</title>
 </h:head>
 <h:form>
-	<p:growl id="messages"></p:growl>
 	<p:panelGrid columns="2">
 		<p:outputLabel value="Enter Employee Name:"></p:outputLabel>
 		<p:inputText value="#{registerEmployee.employee.employeeName}"></p:inputText>
 		<p:outputLabel value="Enter Employee Hire Date:"></p:outputLabel>
-		<p:calendar value="#{registerEmployee.employee.employeeHireDate}"></p:calendar>
+		<p:calendar value="#{registerEmployee.employee.employeeHireDate}" locale="ru"></p:calendar>
 		<p:outputLabel value="Enter Employee Salary:"></p:outputLabel>
-		<p:inputText value="#{registerEmployee.employee.employeeSalary}"></p:inputText>						
+		<p:inputText value="#{registerEmployee.employee.employeeSalary}"></p:inputText>
 	</p:panelGrid>
 	<p:commandButton value="Register" action="#{registerEmployee.register}" update="messages"></p:commandButton>
+	<p:growl id="messages"></p:growl>
 </h:form>
 </html>
