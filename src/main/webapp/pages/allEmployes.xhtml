@@ -12,25 +12,25 @@
      </f:metadata>-->
     <h:outputLabel value="All of employes"/>
 <br/>
-    <p:dataTable var="employee" value="#{employes.employes}" resizableColumns="true">
-        <p:column headerText="#{text['employes.employee.id']}">
-            <h:outputText value="#{employee.employeeId}">
+    <p:dataTable var="item" value="#{employes.employes}" resizableColumns="true">
+        <!--<p:column headerText="#{text['employes.employee.id']}">
+            <h:outputText value="#{item.employeeId}">
             </h:outputText>
-        </p:column>
+        </p:column>-->
         <p:column headerText="#{text['employes.employee.name']}">
-            <h:outputText value="#{employee.employeeName}">
+            <h:outputText value="#{item.employeeName}">
                <!-- <f:validator>#{text['register.employee.name.wrong']}</f:validator>-->
             </h:outputText>
         </p:column>
         <p:column headerText="#{text['employes.employee.salary']}">
-            <h:outputText value="#{employee.employeeSalary}">
+            <h:outputText value="#{item.employeeSalary}">
                 <!--<f:validator>#{text['register.employee.salary.wrong']}</f:validator>-->
             </h:outputText>
         </p:column>
         <p:column headerText="#{text['employes.employee.edit']}">
-            <h:link value="Edit" outcome="pages/edit">
-                <f:param name="id" value="#{employee.employeeId}"></f:param>
-            </h:link>
+            <p:link value="Edit" outcome="/pages/edit.xhtml?faces-redirect=true">
+                <f:param name="id" value="#{item.employeeId}"></f:param>
+            </p:link>
         </p:column>
     </p:dataTable>
 

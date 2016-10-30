@@ -18,10 +18,11 @@
 		<p:outputLabel value="#{text['register.salary']}"></p:outputLabel>
 		<p:inputText value="#{registerEmployee.employee.employeeSalary}"></p:inputText>
 	</p:panelGrid>
-	<p:commandButton value="#{text['register.registration']}" action="#{registerEmployee.register}" update="messages"></p:commandButton>
-	<br/>
-	<p:commandButton value="#{text['register.all.employes']}" action="#{registerEmployee.goToEmployesPage}" update="messages"></p:commandButton>
+	<p:commandButton value="#{text['register.registration']}" action="#{registerEmployee.register}" update="messages2"></p:commandButton>
 	<p:growl id="messages"></p:growl>
+	<p:messages id="messages2"></p:messages>
 </h:form>
+	<br/>
+	<p:button value="#{text['register.all.employes']}" outcome="/pages/allEmployes.xhtml?faces-redirect=true"></p:button>
 </f:view>
 </html>

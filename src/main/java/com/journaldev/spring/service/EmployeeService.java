@@ -5,11 +5,13 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.journaldev.hibernate.data.Employee;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -38,7 +40,8 @@ public class EmployeeService {
 		// Acquire session
 		Session session = sessionFactory.getCurrentSession();
 		//Getting of employes from database
-        SQLQuery query = session.createSQLQuery("Select * from employee");
-        return (List<Employee>) query.list();
+        SQLQuery query = session.createSQLQuery("Select * from employee").addEntity(Employee.class);
+		List<Employee> theListEmployes = query.list();
+        return theListEmployes;
 	}
 }

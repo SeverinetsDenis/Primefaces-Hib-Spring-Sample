@@ -48,7 +48,7 @@ public class RegisterEmployee implements Serializable {
 		return "";
 	}
 
-    public String goToEmployesPage(){
+    /*public String goToEmployesPage(){
         return "pages/allEmployes.xhtml?faces-redirect=true&includeViewParams=true";
-    }
+    }*/
 }

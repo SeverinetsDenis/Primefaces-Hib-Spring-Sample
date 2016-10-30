@@ -7,6 +7,8 @@ import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -15,8 +17,6 @@ import java.util.List;
 @ManagedBean
 @RequestScoped
 public class Employes {
-
-    private List<Employee> employes;
 
     @ManagedProperty("#{employeeService}")
     private EmployeeService employeeService;
@@ -29,14 +29,12 @@ public class Employes {
         this.employeeService = employeeService;
     }
 
+    //Some actions will be executed before creating a JSF page and each time after reload page
     @PostConstruct
     public void init (){
-        //Some actions will be applied each time after reload page
-
     }
 
     public List<Employee> getEmployes() {
-        employes = employeeService.getEmployes();
-        return employes;
+        return employeeService.getEmployes();
     }
 }
