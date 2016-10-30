@@ -3,26 +3,55 @@
     <schema id="1" name="test">
       <visible>1</visible>
     </schema>
-    <schema id="2" name="information_schema" />
-    <schema id="3" name="mysql" />
-    <schema id="4" name="performance_schema" />
-    <schema id="5" name="sys" />
-    <table id="6" parent="1" name="employee" />
-    <column id="7" parent="6" name="EMP_ID">
+    <schema id="2" name="employees" />
+    <schema id="3" name="information_schema" />
+    <schema id="4" name="mysql" />
+    <schema id="5" name="performance_schema" />
+    <schema id="6" name="shop" />
+    <schema id="7" name="sys" />
+    <table id="8" parent="1" name="products" />
+    <table id="9" parent="1" name="employee" />
+    <column id="10" parent="8" name="PROD_ID">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
       <sequence-identity>1</sequence-identity>
     </column>
-    <column id="8" parent="6" name="EMP_NAME">
+    <column id="11" parent="8" name="PROD_NAME">
+      <mandatory>1</mandatory>
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="12" parent="8" name="PROD_DESCR">
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="13" parent="8" name="PROD_PRICE">
+      <mandatory>1</mandatory>
+      <data-type>decimal(10,3)|0</data-type>
+      <default-expression>'0.000'</default-expression>
+    </column>
+    <column id="14" parent="8" name="PROD_QUANTITY">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>'0'</default-expression>
+    </column>
+    <key id="15" parent="8" name="PRIMARY">
+      <columns>PROD_ID</columns>
+      <primary>1</primary>
+    </key>
+    <column id="16" parent="9" name="EMP_ID">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="17" parent="9" name="EMP_NAME">
       <data-type>varchar(45)|0</data-type>
     </column>
-    <column id="9" parent="6" name="EMP_HIRE_DATE">
+    <column id="18" parent="9" name="EMP_HIRE_DATE">
       <data-type>datetime|0</data-type>
     </column>
-    <column id="10" parent="6" name="EMP_SALARY">
+    <column id="19" parent="9" name="EMP_SALARY">
       <data-type>decimal(11,4)|0</data-type>
     </column>
-    <key id="11" parent="6" name="PRIMARY">
+    <key id="20" parent="9" name="PRIMARY">
       <columns>EMP_ID</columns>
       <primary>1</primary>
     </key>

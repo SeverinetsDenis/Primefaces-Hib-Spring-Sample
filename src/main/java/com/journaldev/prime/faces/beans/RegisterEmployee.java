@@ -45,6 +45,10 @@ public class RegisterEmployee implements Serializable {
 		// Add message
 		FacesContext.getCurrentInstance().addMessage(null, 
 				new FacesMessage("The Employee "+this.employee.getEmployeeName()+" Is Registered Successfully"));
-		return "result.xhtml?faces-redirect=true&includeViewParams=true";
+		return "";
 	}
+
+    public String goToEmployesPage(){
+        return "pages/allEmployes.xhtml?faces-redirect=true&includeViewParams=true";
+    }
 }
