@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+	version="2.2">
+<application>
+	<el-resolver>org.springframework.web.jsf.el.SpringBeanFacesELResolver</el-resolver>
+	<locale-config>
+		<default-locale>ru_RU</default-locale>
+		<supported-locale>en_EN</supported-locale>
+	</locale-config>
+	<!--Here is all of the project messages which are shown on jsf pages-->
+	<resource-bundle>
+		<base-name>i18n.ProjectMessages</base-name>
+		<var>text</var>
+	</resource-bundle>
+	<!--Here is specified overloaded of the JSF validation properties-->
+	<message-bundle>i18n.ValidationMessages</message-bundle>
+
+</application>
+</faces-config>

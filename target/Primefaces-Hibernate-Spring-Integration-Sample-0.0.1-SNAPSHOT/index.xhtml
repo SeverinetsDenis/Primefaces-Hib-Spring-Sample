@@ -1,0 +1,28 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<script name="jquery/jquery.js" library="primefaces"></script>
+	<script type="text/javascript" src="js/calendar.js"></script>
+	<title>Register Employee</title>
+</h:head>
+<f:view>
+<h:form>
+	<p:panelGrid columns="2">
+		<p:outputLabel value="#{text['register.name']}"></p:outputLabel>
+		<p:inputText value="#{registerEmployee.employee.employeeName}"></p:inputText>
+		<p:outputLabel value="#{text['register.date']}"></p:outputLabel>
+		<p:calendar value="#{registerEmployee.employee.employeeHireDate}" locale="ru"></p:calendar>
+		<p:outputLabel value="#{text['register.salary']}"></p:outputLabel>
+		<p:inputText value="#{registerEmployee.employee.employeeSalary}"></p:inputText>
+	</p:panelGrid>
+	<p:commandButton value="#{text['register.registration']}" action="#{registerEmployee.register}" update="messages2"></p:commandButton>
+	<p:growl id="messages"></p:growl>
+	<p:messages id="messages2"></p:messages>
+</h:form>
+	<br/>
+	<p:button value="#{text['register.all.employes']}" outcome="/pages/allEmployes.xhtml?faces-redirect=true"></p:button>
+</f:view>
+</html>
